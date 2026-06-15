@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FakeBank – Account Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #f5f5f5; display: flex; justify-content: center; padding: 60px 20px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 32px; width: 420px; }
+    h1 { font-size: 20px; margin-bottom: 6px; color: #111; }
+    p { font-size: 14px; color: #666; margin-bottom: 24px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 13px; color: #444; margin-bottom: 6px; }
+    input { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+    .danger-btn {
+      margin-top: 24px;
+      width: 100%;
+      padding: 12px;
+      background: #e53e3e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .danger-btn:hover { background: #c53030; }
+    #result { display:none; margin-top:16px; padding:12px; background:#fff3cd; border:1px solid #f0ad4e; border-radius:8px; font-size:14px; color:#856404; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Account settings</h1>
+    <p>FakeBank — this is a simulated victim page for a clickjacking lab.</p>
+    <div class="field">
+      <label>Full name</label>
+      <input type="text" value="Sushil Adhikari" readonly>
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="text" value="sushil@fakebank.com" readonly>
+    </div>
+    <button class="danger-btn" onclick="document.getElementById('result').style.display='block'">
+      Delete my account
+    </button>
+    <div id="result">⚠️ Account deletion triggered! (“The attacker can directly place your details through a URL, and you don’t need to do anything else—just click the ‘Claim Your Prize’ button.”)</div>
+  </div>
+</body>
+</html>
